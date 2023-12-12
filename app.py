@@ -117,8 +117,11 @@ appdata = pd.DataFrame({
     "female":[gender_num]})
 
 PredictionResult = lr.predict(appdata)
+probability = lr.predict_proba(appdata)
+
+prob_OnLI = probability[0,0]*100
 
 if PredictionResult == 1:
-    st.markdown("#### 👍 This individual is likely to be on LinkedIn!")
+    st.markdown(f"#### 👍 It is likely that this person will be on LinkedIn, with a {prob_OnLI}% chance to be on LinkedIn!")
 else:
-    st.markdown("#### 👎 This individual is *not* likely to be on LinkedIn!")
+    st.markdown(f"#### 👎 It is not likely this person will be on LinkedIn, with only a {prob_OnLI}% likely to be on LinkedIn!")
