@@ -122,6 +122,6 @@ probability = lr.predict_proba(appdata)
 prob_OnLI = round(probability[0,1]*100,2)
 
 if PredictionResult == 1:
-    st.markdown(f"#### 👍 It is likely that this person will be on LinkedIn, with a {prob_OnLI}% chance to be on LinkedIn!")
+    st.markdown(f"#### 👍 It is likely that this person will be on LinkedIn, with a {prob_OnLI}% chance of being on LinkedIn!")
 else:
-    st.markdown(f"#### 👎 It is not likely this person will be on LinkedIn, with only a {prob_OnLI}% likely to be on LinkedIn!")
+    st.markdown(f"#### 👎 It is not likely this person will be on LinkedIn, with only a {prob_OnLI}% chance of being on LinkedIn!")
